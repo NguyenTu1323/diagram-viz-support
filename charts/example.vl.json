@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Monthly Revenue 2024",
+    "fontSize": 20,
+    "font": "sans-serif"
+  },
+  "description": "Bar chart showing monthly revenue for 2024",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "values": [
+      {"month": "Jan", "revenue": 45000, "quarter": "Q1"},
+      {"month": "Feb", "revenue": 52000, "quarter": "Q1"},
+      {"month": "Mar", "revenue": 48000, "quarter": "Q1"},
+      {"month": "Apr", "revenue": 61000, "quarter": "Q2"},
+      {"month": "May", "revenue": 58000, "quarter": "Q2"},
+      {"month": "Jun", "revenue": 67000, "quarter": "Q2"},
+      {"month": "Jul", "revenue": 72000, "quarter": "Q3"},
+      {"month": "Aug", "revenue": 69000, "quarter": "Q3"},
+      {"month": "Sep", "revenue": 75000, "quarter": "Q3"},
+      {"month": "Oct", "revenue": 81000, "quarter": "Q4"},
+      {"month": "Nov", "revenue": 78000, "quarter": "Q4"},
+      {"month": "Dec", "revenue": 89000, "quarter": "Q4"}
+    ]
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 4,
+    "tooltip": true
+  },
+  "encoding": {
+    "x": {
+      "field": "month",
+      "type": "ordinal",
+      "axis": {
+        "labelAngle": 0,
+        "title": "Month"
+      }
+    },
+    "y": {
+      "field": "revenue",
+      "type": "quantitative",
+      "axis": {
+        "title": "Revenue ($)",
+        "format": "$,.0f"
+      }
+    },
+    "color": {
+      "field": "quarter",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Q1", "Q2", "Q3", "Q4"],
+        "range": ["#4e79a7", "#59a14f", "#f28e2c", "#e15759"]
+      },
+      "legend": {
+        "title": "Quarter"
+      }
+    },
+    "tooltip": [
+      {"field": "month", "type": "ordinal", "title": "Month"},
+      {"field": "revenue", "type": "quantitative", "title": "Revenue", "format": "$,.0f"},
+      {"field": "quarter", "type": "nominal", "title": "Quarter"}
+    ]
+  }
+}

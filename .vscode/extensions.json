@@ -1,0 +1,27 @@
+{
+  "recommendations": [
+    // Mermaid diagram support
+    "bierner.markdown-mermaid",
+
+    // Marp slide deck support
+    "marp-team.marp-vscode",
+
+    // Vega-Lite chart visualization
+    "randomfractals.vscode-vega-viewer",
+
+    // Python development
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.black-formatter",
+
+    // Enhanced markdown
+    "yzhang.markdown-all-in-one",
+
+    // JSON tools
+    "ZainChen.json",
+
+    // Git integration
+    "eamodio.gitlens"
+  ],
+  "unwantedRecommendations": []
+}

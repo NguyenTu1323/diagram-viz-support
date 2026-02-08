@@ -1,0 +1,58 @@
+{
+  // Marp configuration
+  "markdown.marp.enableHtml": true,
+  "markdown.marp.themes": [],
+
+  // File associations
+  "files.associations": {
+    "*.vl.json": "json",
+    "*.mmd": "mermaid"
+  },
+
+  // Editor settings
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Language-specific formatters
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+
+  // Python settings
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+
+  // File exclusions
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.DS_Store": true
+  },
+
+  // Search exclusions
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/outputs": true,
+    "**/.venv": true,
+    "**/venv": true
+  },
+
+  // Preview settings
+  "markdown.preview.breaks": true,
+  "markdown.preview.linkify": true
+}

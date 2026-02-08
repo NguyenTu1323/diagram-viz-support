@@ -1,0 +1,26 @@
+# Output files
+outputs/*.png
+outputs/*.svg
+outputs/*.pptx
+outputs/*.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/.history/
+*.swp
+*.swo
+*~
