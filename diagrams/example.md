@@ -1,3 +1,8 @@
+# System Architecture Diagram
+
+This diagram shows a typical API request flow with caching and authentication.
+
+```mermaid
 graph TB
     Start([User Request]) --> Gateway[API Gateway]
     Gateway --> Auth{Authentication<br/>Valid?}
@@ -23,3 +28,9 @@ graph TB
     style Cache fill:#fff4e1
     style Error fill:#ffe1e1
     style DB fill:#e1e5ff
+```
+
+## How to View
+
+1. **In VS Code**: Open this file and click the preview button (top-right icon) or use `Cmd+Shift+V`
+2. **Export**: Use Mermaid CLI or copy to [mermaid.live](https://mermaid.live) for PNG/SVG export

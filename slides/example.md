@@ -17,19 +17,28 @@ backgroundColor: #fff
 
 Our platform uses a modern microservices architecture with intelligent caching.
 
-```mermaid
-graph LR
-    Client[Client Apps] --> Gateway[API Gateway]
-    Gateway --> Auth[Auth Service]
-    Gateway --> API[API Services]
-    API --> Cache[(Redis Cache)]
-    API --> DB[(PostgreSQL)]
-
-    style Client fill:#e1f5e1
-    style Gateway fill:#e1e5ff
-    style Auth fill:#fff4e1
-    style API fill:#ffe1e1
 ```
+┌─────────────┐
+│ Client Apps │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐      ┌──────────────┐
+│ API Gateway │─────▶│ Auth Service │
+└──────┬──────┘      └──────────────┘
+       │
+       ▼
+┌─────────────┐      ┌──────────────┐      ┌────────────┐
+│ API Services│─────▶│ Redis Cache  │      │ PostgreSQL │
+└─────────────┘      └──────────────┘      └────────────┘
+       │                                            ▲
+       └────────────────────────────────────────────┘
+```
+
+
+
+
+**Key Components:** Gateway • Auth • API Services • Cache • Database
 
 ---
 

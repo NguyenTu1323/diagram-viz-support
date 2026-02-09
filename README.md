@@ -6,7 +6,7 @@ A prompt-driven workflow for creating diagrams, charts, slides, and presentation
 
 ```
 diagram_viz_support/
-├── diagrams/          # Mermaid diagrams (.mmd)
+├── diagrams/          # Mermaid diagrams (markdown .md files)
 ├── charts/            # Vega-Lite specs (.vl.json)
 ├── slides/            # Marp markdown slides (.md)
 ├── scripts/           # Python scripts for pptx generation
@@ -18,7 +18,18 @@ diagram_viz_support/
 
 ### 1. Mermaid Diagrams (diagrams/)
 
-Create flowcharts, sequence diagrams, ER diagrams, and system architectures.
+Create flowcharts, sequence diagrams, ER diagrams, and system architectures using Markdown files with Mermaid code blocks.
+
+**File Format:**
+```markdown
+# My Diagram Title
+
+```mermaid
+graph TD
+    A[Start] --> B[Process]
+    B --> C[End]
+```
+```
 
 **Example Prompts:**
 - "Create a flowchart showing the user authentication process"
@@ -26,12 +37,17 @@ Create flowcharts, sequence diagrams, ER diagrams, and system architectures.
 - "Draw an ER diagram for a blog database with users, posts, and comments"
 - "Create a system architecture diagram showing microservices communication"
 
-**Preview:** Use the Mermaid Preview extension in VS Code
+**Preview in VS Code:**
+1. Open the `.md` file containing your diagram
+2. Press `Cmd+Shift+V` (Mac) or `Ctrl+Shift+V` (Windows/Linux)
+3. Or click the preview icon in the top-right corner
 
-**Export:** Use Mermaid CLI or online tools to export to PNG/SVG:
+**Export:** Use Mermaid CLI to export to PNG/SVG:
 ```bash
-mmdc -i diagrams/example.mmd -o outputs/example.png
+mmdc -i diagrams/example.md -o outputs/example.png
 ```
+
+**Alternative:** Copy the mermaid code and paste into [mermaid.live](https://mermaid.live) for instant preview and export
 
 ### 2. Vega-Lite Charts (charts/)
 
@@ -43,7 +59,11 @@ Create interactive data visualizations with declarative JSON specs.
 - "Make a scatter plot correlating hours studied vs test scores"
 - "Create a pie chart showing market share distribution"
 
-**Preview:** Use the Vega Viewer extension in VS Code
+**Preview in VS Code:**
+1. Open the `.vl.json` file
+2. Press `Cmd+Shift+P` and type "Vega: Open Preview"
+3. Or right-click in the file and select "Vega: Open Preview"
+4. The chart will render in a preview pane
 
 **Export:** Use vega-cli to render charts:
 ```bash
@@ -60,7 +80,15 @@ Create simple, beautiful slide decks using Markdown.
 - "Make a deck with our Q4 results including charts and diagrams"
 - "Create an onboarding presentation for new engineers"
 
-**Preview:** Use Marp for VS Code extension
+**Preview in VS Code:**
+1. Open the `.md` slide file
+2. Click the "Open Marp Preview" icon in the top-right
+3. Or press `Cmd+Shift+V` and the Marp extension will render it
+
+**Important Notes:**
+- ⚠️ Marp doesn't support Mermaid diagrams natively in preview
+- For diagrams in slides, use ASCII art, emoji layouts, or export Mermaid diagrams as images and include them
+- Tables, lists, and basic markdown work perfectly
 
 **Export:** Marp can export to HTML, PDF, or PPTX:
 ```bash
@@ -121,10 +149,14 @@ python example_pptx.py
 ## Examples
 
 Check out the example files to see working samples:
-- `diagrams/example.mmd` - System architecture flowchart
+- `diagrams/example.md` - System architecture flowchart
+  → Press `Cmd+Shift+V` to preview
 - `charts/example.vl.json` - Monthly revenue bar chart
+  → Press `Cmd+Shift+C` → "Vega: Open Preview"
 - `slides/example.md` - Product overview deck
+  → Click Marp preview icon or `Cmd+Shift+V`
 - `scripts/example_pptx.py` - Automated presentation generator
+  → Run: `cd scripts && python example_pptx.py`
 
 ## Contributing
 

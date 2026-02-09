@@ -2,6 +2,7 @@
   "recommendations": [
     // Mermaid diagram support
     "bierner.markdown-mermaid",
+    "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
 
     // Marp slide deck support
     "marp-team.marp-vscode",
