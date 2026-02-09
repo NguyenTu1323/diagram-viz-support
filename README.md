@@ -7,6 +7,7 @@ A prompt-driven workflow for creating diagrams, charts, slides, and presentation
 ```
 diagram_viz_support/
 ├── diagrams/          # Mermaid diagrams (markdown .md files)
+├── drawio/            # Draw.io diagrams (.drawio files)
 ├── charts/            # Vega-Lite specs (.vl.json)
 ├── slides/            # Marp markdown slides (.md)
 ├── scripts/           # Python scripts for pptx generation
@@ -49,7 +50,38 @@ mmdc -i diagrams/example.md -o outputs/example.png
 
 **Alternative:** Copy the mermaid code and paste into [mermaid.live](https://mermaid.live) for instant preview and export
 
-### 2. Vega-Lite Charts (charts/)
+### 2. Draw.io Diagrams (drawio/)
+
+Create rich, visual diagrams with full drag-and-drop editing directly in VS Code.
+
+**File Format:** `.drawio` files (native Draw.io format)
+
+**Example Prompts:**
+- "Create a network architecture diagram with routers and firewalls"
+- "Design a detailed UML class diagram for our application"
+- "Make a comprehensive system diagram with custom icons"
+- "Create an infrastructure diagram with AWS/Azure components"
+
+**Edit in VS Code:**
+1. Create or open a `.drawio` file
+2. VS Code opens the visual editor automatically
+3. Drag, drop, and style shapes visually
+4. Save with `Cmd+S`
+
+**Export:**
+- Right-click canvas → **Export** → Choose PNG, SVG, or PDF
+- Exports save to `outputs/` folder
+
+**Convert from Mermaid:**
+- Use `diagrams/*-drawio.md` files (stripped of styling)
+- Copy code → Draw.io → **Arrange → Insert → Mermaid**
+- Then style manually in Draw.io
+
+**When to use Draw.io vs Mermaid:**
+- **Use Mermaid**: Quick diagrams, version control, code-based, AI-friendly
+- **Use Draw.io**: Complex visuals, custom styling, detailed layouts, presentations
+
+### 3. Vega-Lite Charts (charts/)
 
 Create interactive data visualizations with declarative JSON specs.
 
@@ -70,7 +102,7 @@ Create interactive data visualizations with declarative JSON specs.
 vl2png charts/example.vl.json outputs/example.png
 ```
 
-### 3. Marp Slides (slides/)
+### 4. Marp Slides (slides/)
 
 Create simple, beautiful slide decks using Markdown.
 
@@ -96,7 +128,7 @@ marp slides/example.md -o outputs/example.pdf
 marp slides/example.md -o outputs/example.pptx
 ```
 
-### 4. Python-PPTX Presentations (scripts/)
+### 5. Python-PPTX Presentations (scripts/)
 
 Generate rich, data-driven PowerPoint presentations programmatically.
 
@@ -120,7 +152,8 @@ python example_pptx.py
 ### Prerequisites
 
 1. **VS Code Extensions** (recommended via `.vscode/extensions.json`):
-   - Markdown Mermaid for diagram preview
+   - Markdown Mermaid for Mermaid diagram preview
+   - Draw.io Integration for visual diagram editing
    - Marp for VS Code for slides
    - Vega Viewer for chart preview
    - Python extension
@@ -133,7 +166,7 @@ python example_pptx.py
 ### Workflow
 
 1. **Prompt Claude** with your visualization needs using the example prompts above
-2. **Save outputs** to the appropriate directory (diagrams/, charts/, slides/, scripts/)
+2. **Save outputs** to the appropriate directory (diagrams/, drawio/, charts/, slides/, scripts/)
 3. **Preview** in VS Code using the recommended extensions
 4. **Export** to outputs/ folder for sharing or embedding
 5. **Version control** your source files (git automatically ignores generated outputs)
@@ -145,6 +178,7 @@ python example_pptx.py
 - **Specify the audience** and purpose for slides/presentations
 - **Request iterations**: "Make the colors more vibrant" or "Add annotations to highlight X"
 - **Combine types**: "Create a Marp slide deck that includes this Mermaid diagram"
+- **Choose the right tool**: Mermaid for quick/code-based, Draw.io for detailed visual design
 
 ## Examples
 

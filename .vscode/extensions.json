@@ -4,6 +4,9 @@
     "bierner.markdown-mermaid",
     "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
 
+    // Draw.io diagram editor
+    "hediet.vscode-drawio",
+
     // Marp slide deck support
     "marp-team.marp-vscode",
 
