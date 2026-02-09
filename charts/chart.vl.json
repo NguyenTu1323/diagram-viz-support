@@ -1,0 +1,84 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Net Value Over Time (VND)",
+    "fontSize": 20,
+    "font": "sans-serif"
+  },
+  "description": "Time series chart showing net value trends",
+  "width": 800,
+  "height": 450,
+  "data": {
+    "values": [
+      {"time": "2021-12-31", "net_value": 1134278121},
+      {"time": "2022-01-31", "net_value": 1044784910},
+      {"time": "2022-02-28", "net_value": 1185734461},
+      {"time": "2022-03-31", "net_value": 1173471911},
+      {"time": "2022-04-30", "net_value": 1291163479},
+      {"time": "2022-05-31", "net_value": 973389774},
+      {"time": "2022-06-30", "net_value": 901599824},
+      {"time": "2022-07-31", "net_value": 1036351639},
+      {"time": "2022-08-31", "net_value": 1106480504},
+      {"time": "2022-09-30", "net_value": 877320792},
+      {"time": "2022-10-31", "net_value": 787745292},
+      {"time": "2022-11-30", "net_value": 941688864},
+      {"time": "2022-12-31", "net_value": 971410547},
+      {"time": "2023-01-31", "net_value": 1265850564},
+      {"time": "2023-02-28", "net_value": 1131058087},
+      {"time": "2023-03-31", "net_value": 1235703124},
+      {"time": "2023-04-30", "net_value": 1293777439}
+    ]
+  },
+  "transform": [
+    {"calculate": "datum.net_value / 1000000000", "as": "net_value_billions"}
+  ],
+  "mark": {
+    "type": "bar",
+    "color": "#4c78a8",
+    "cornerRadiusEnd": 4,
+    "tooltip": true
+  },
+  "encoding": {
+    "x": {
+      "field": "time",
+      "type": "temporal",
+      "timeUnit": "yearmonth",
+      "axis": {
+        "title": "Date",
+        "format": "%b %Y",
+        "labelAngle": -45,
+        "labelFontSize": 11,
+        "grid": false
+      }
+    },
+    "y": {
+      "field": "net_value_billions",
+      "type": "quantitative",
+      "axis": {
+        "title": "Net Value (B VND)",
+        "format": ".2f",
+        "labelFontSize": 11,
+        "grid": true,
+        "gridOpacity": 0.3
+      },
+      "scale": {
+        "domain": [0, 1.4],
+        "nice": true
+      }
+    },
+    "tooltip": [
+      {
+        "field": "time",
+        "type": "temporal",
+        "title": "Date",
+        "format": "%B %d, %Y"
+      },
+      {
+        "field": "net_value",
+        "type": "quantitative",
+        "title": "Net Value (VND)",
+        "format": ",.0f"
+      }
+    ]
+  }
+}

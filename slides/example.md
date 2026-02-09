@@ -1,5 +1,5 @@
 ---
-marp: true
+marp: false
 theme: default
 paginate: true
 backgroundColor: #fff
@@ -34,9 +34,6 @@ Our platform uses a modern microservices architecture with intelligent caching.
        │                                            ▲
        └────────────────────────────────────────────┘
 ```
-
-
-
 
 **Key Components:** Gateway • Auth • API Services • Cache • Database
 
