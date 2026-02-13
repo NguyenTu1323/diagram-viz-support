@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdftotext:*)",
+      "Bash(brew install:*)",
+      "Bash(pip3 install:*)",
+      "Bash(git -C /Users/tunguyen1323/Downloads/Workspace/diagram_viz_support log --oneline --all)",
+      "Bash(node --version:*)",
+      "Bash(npm install:*)"
+    ]
+  }
+}

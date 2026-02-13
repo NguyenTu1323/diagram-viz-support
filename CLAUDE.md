@@ -8,7 +8,7 @@ This file contains persistent instructions and preferences for this project. Cla
 - **Number Format**: ask to use B or G with billion or giga
 
 ### Chart Preferences
-- Use Vega-Lite for data visualizations
+- Use Vega-Lite for data visualizations and   
 - Always include tooltips with full values
 - Use clear, readable axis labels with proper units
 - Default chart colors: Professional blues and earth tones
@@ -18,18 +18,10 @@ This file contains persistent instructions and preferences for this project. Cla
 - Use Markdown files with Mermaid code blocks (`.md` not `.mmd`)
 - Include documentation around diagrams explaining the architecture
 
-### Slide Preferences
-- Use Marp for presentations
-- **Do not use Mermaid diagrams** in Marp slides (not supported)
-- Use ASCII art, tables, or text layouts instead
-- Keep slides clean and professional
-
 ## File Organization
 
 - **Diagrams**: `diagrams/*.md` - Mermaid diagrams in markdown
 - **Charts**: `charts/*.vl.json` - Vega-Lite specifications
-- **Slides**: `slides/*.md` - Marp slide decks
-- **Scripts**: `scripts/*.py` - Python presentation generators
 - **Outputs**: `outputs/` - Generated files (gitignored)
 
 ## Common Tasks

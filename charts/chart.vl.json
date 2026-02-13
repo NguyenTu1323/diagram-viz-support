@@ -33,16 +33,19 @@
     {"calculate": "datum.net_value / 1000000000", "as": "net_value_billions"}
   ],
   "mark": {
-    "type": "bar",
-    "color": "#4c78a8",
-    "cornerRadiusEnd": 4,
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 100
+    },
+    "strokeWidth": 3,
+    "color": "#1f77b4",
     "tooltip": true
   },
   "encoding": {
     "x": {
-      "field": "time",
+      "field": "time",  
       "type": "temporal",
-      "timeUnit": "yearmonth",
       "axis": {
         "title": "Date",
         "format": "%b %Y",
@@ -62,7 +65,7 @@
         "gridOpacity": 0.3
       },
       "scale": {
-        "domain": [0, 1.4],
+        "domain": [0.7, 1.35],
         "nice": true
       }
     },

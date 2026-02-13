@@ -7,16 +7,15 @@
     // Draw.io diagram editor
     "hediet.vscode-drawio",
 
-    // Marp slide deck support
-    "marp-team.marp-vscode",
-
     // Vega-Lite chart visualization
     "randomfractals.vscode-vega-viewer",
 
-    // Python development
-    "ms-python.python",
-    "ms-python.vscode-pylance",
-    "ms-python.black-formatter",
+    // PDF viewer
+    "tomoki1207.pdf",
+
+    // AI assistants
+    "github.copilot",
+    "github.copilot-chat",
 
     // Enhanced markdown
     "yzhang.markdown-all-in-one",
